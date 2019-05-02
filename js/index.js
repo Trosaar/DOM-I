@@ -37,6 +37,55 @@ const siteContent = {
   },
 };
 
+const navItems = document.querySelectorAll('nav a');
+navItemsArr = Array.from(navItems)
+htmlNavItems = Object.keys(siteContent.nav).map(function(value) {
+  return siteContent.nav[value];
+});
+
+for (var i = 0; i < navItemsArr.length; i++) {
+  navItemsArr[i].textContent = htmlNavItems[i]
+};
+
+const ctah1 = document.querySelector('.cta-text h1');
+ctah1.textContent = siteContent.cta.h1;
+
+const ctaButton = document.querySelector('.cta-text button');
+ctaButton.textContent = siteContent.cta.button;
+
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent.cta["img-src"];
+
+// const contentH4 = document.querySelectorAll('h4');
+// contentH4Arr = Array.from(contentH4);
+// htmlContent = siteContent['main-content'];
+// htmlContentH4 = Object.keys(htmlContent.map(function(string) {
+// if (string.includes('h4')) {
+//   return string
+// }}).filter(function (el) {
+//   return el != null;
+// });
+//
+// console.log(htmlContent);
+// console.log(htmlContentH4);
+
+const contentH4 = document.querySelectorAll('.text-content h4');
+contentH4[0].textContent = siteContent["main-content"]["features-h4"];
+contentH4[1].textContent = siteContent["main-content"]["about-h4"];
+contentH4[2].textContent = siteContent["main-content"]["services-h4"];
+contentH4[3].textContent = siteContent["main-content"]["product-h4"];
+contentH4[4].textContent = siteContent["main-content"]["vision-h4"];
+
+const midImg = document.querySelector('#middle-img');
+midImg.src = siteContent['main-content']["middle-img-src"];
+
+const contentP = document.querySelectorAll('.text-content P');
+contentP[0].textContent = siteContent["main-content"]["features-content"];
+contentP[1].textContent = siteContent["main-content"]["about-content"];
+contentP[2].textContent = siteContent["main-content"]["services-content"];
+contentP[3].textContent = siteContent["main-content"]["product-content"];
+contentP[4].textContent = siteContent["main-content"]["vision-content"];
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
